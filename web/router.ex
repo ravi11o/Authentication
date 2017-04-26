@@ -18,6 +18,7 @@ defmodule GoogleAuth.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+
   end
 
   scope "/auth", GoogleAuth do
@@ -26,6 +27,7 @@ defmodule GoogleAuth.Router do
     get "/:provider", AuthController, :index
     get "/:provider/callback", AuthController, :callback
     delete "/logout", AuthController, :delete
+    
 
   end
   #Fetch Current user from session and add it to conn.assigns
