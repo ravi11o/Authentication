@@ -1,0 +1,13 @@
+<div class="jumbotron">
+  <%= if @current_user do %>
+    <h2>Welcome, <%= @current_user["name"] %>!</h2>
+  <% else %>
+    <h2>Welcome to Phoenix !</h2>
+    <%= link to: auth_path(@conn, :index, "google"), class: "btn btn-primary" do %>
+      Sign In with Google
+    <% end %>
+    <%= link to: auth_path(@conn, :index, "facebook"), class: "btn btn-primary" do %>
+      Sign In with Facebook
+    <% end %>
+  <% end %>
+</div>
